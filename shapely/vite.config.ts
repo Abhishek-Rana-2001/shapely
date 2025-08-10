@@ -7,6 +7,6 @@ export default defineConfig({
     tailwindcss(),
   ],
   server:{
-    allowedHosts:["https://shapely.onrender.com"]
+    allowedHosts:["shapely.onrender.com"]
   }
 })
