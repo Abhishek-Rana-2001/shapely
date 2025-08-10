@@ -18,7 +18,7 @@ function App() {
         <Toaster position='top-right'  />
         <Routes>
           <Route path="/" element={<CallScheduler />} />
-          <NutritionFunnelRoutes />
+          {NutritionFunnelRoutes()}
         </Routes>
       </CallSchedulerProvider>
   )
