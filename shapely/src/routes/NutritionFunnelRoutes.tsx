@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Route, Navigate } from "react-router-dom";
 import NutritionGoals from "../pages/funnel/NutritionGoals";
 import FunnelLayout from "../pages/funnel";
 import { FunnelProvider } from "../context/FunnelContext";
@@ -20,28 +20,31 @@ import DateTimeSelector from "../pages/DateAndTimeSelector";
 
 export default function NutritionFunnelRoutes() {
   return (
-    <FunnelProvider>
-    <Routes>
-      <Route path="/funnel" element={<FunnelLayout />}>
-        <Route index element={<Navigate to="nutrition-goals" replace />} />
-        <Route path="nutrition-goals" element={<NutritionGoals />} />
-        <Route path="insurance-benefits" element={<InsuranceBenefits />} />
-        <Route path="your-state" element={<YourState />} />
-        <Route path="testimonial" element={<Testimonial   />} />
-        <Route path="insurance-plan" element={<InsurancePlan   />} />
-        <Route path="dietitian" element={<Dietitian   />} />
-        <Route path="your-birthday" element={<YourBirthday   />} />
-        <Route path="insurance-details" element={<InsuranceDetails   />} />
-        <Route path="check-information" element={<CheckInformation   />} />
-        <Route path="diagnoses" element={<SelectDiagnoses   />} />
-        <Route path="self-pay" element={<SelfPay   />} />
-        <Route path="match" element={<Match />} />
-        <Route path="scheduled-call" element={<DateTimeSelector isFromFunnel={true}   />} />
-        <Route path="card-info" element={<CardInfo   />} />
-        <Route path="thank-you" element={<ThankYou   />} />
-        <Route path="next-steps" element={<NextSteps   />} />
-      </Route>
-    </Routes>
-    </FunnelProvider>
+    <Route
+      path="/funnel"
+      element={
+        <FunnelProvider>
+          <FunnelLayout />
+        </FunnelProvider>
+      }
+    >
+      <Route index element={<Navigate to="nutrition-goals" replace />} />
+      <Route path="nutrition-goals" element={<NutritionGoals />} />
+      <Route path="insurance-benefits" element={<InsuranceBenefits />} />
+      <Route path="your-state" element={<YourState />} />
+      <Route path="testimonial" element={<Testimonial />} />
+      <Route path="insurance-plan" element={<InsurancePlan />} />
+      <Route path="dietitian" element={<Dietitian />} />
+      <Route path="your-birthday" element={<YourBirthday />} />
+      <Route path="insurance-details" element={<InsuranceDetails />} />
+      <Route path="check-information" element={<CheckInformation />} />
+      <Route path="diagnoses" element={<SelectDiagnoses />} />
+      <Route path="self-pay" element={<SelfPay />} />
+      <Route path="match" element={<Match />} />
+      <Route path="scheduled-call" element={<DateTimeSelector isFromFunnel />} />
+      <Route path="card-info" element={<CardInfo />} />
+      <Route path="thank-you" element={<ThankYou />} />
+      <Route path="next-steps" element={<NextSteps />} />
+    </Route>
   );
 }

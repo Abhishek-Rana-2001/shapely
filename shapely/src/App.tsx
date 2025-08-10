@@ -13,13 +13,13 @@ function App() {
  
 
   return (
-      <CallSchedulerProvider>
+     <CallSchedulerProvider>
         <ScrollToTop />
         <Toaster position='top-right'  />
         <Routes>
           <Route path="/" element={<CallScheduler />} />
+          <NutritionFunnelRoutes />
         </Routes>
-        <NutritionFunnelRoutes />
       </CallSchedulerProvider>
   )
 }
